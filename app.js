@@ -3,9 +3,13 @@ const divideBtn = document.querySelector(".divide-button");
 const multiplyBtn = document.querySelector(".multiply-button");
 const subtractBtn = document.querySelector(".subtract-button");
 const addBtn = document.querySelector(".add-button");
+
 const equalsBtn = document.querySelector(".equals-button");
+const deleteBtn = document.querySelector(".delete-button");
 const numberDisplay = document.querySelector(".calc-display > p");
 
+// Default settings
+numberDisplay.textContent = "0";
 let chosenOperation = null;
 let tempDisplayValue = "";
 let firstValue = "";
@@ -71,6 +75,12 @@ divideBtn.addEventListener("click", () => {
   firstValue = tempDisplayValue;
   tempDisplayValue = "";
   chosenOperation = divide;
+});
+
+deleteBtn.addEventListener("click", () => {
+  firstValue = "";
+  tempDisplayValue = "";
+  numberDisplay.textContent = "0";
 });
 
 equalsBtn.addEventListener("click", () => {
