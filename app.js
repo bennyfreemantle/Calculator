@@ -9,6 +9,7 @@ const numberDisplay = document.querySelector(".calc-display > p");
 let chosenOperation = null;
 let tempDisplayValue = "";
 let firstValue = "";
+let valueArr = [];
 
 const operate = (operator, num1, num2) => {
   return operator(num1, num2);
@@ -23,39 +24,55 @@ const divide = (num1, num2) => num1 / num2;
 numberBtns.forEach((number) => {
   number.addEventListener("click", () => {
     tempDisplayValue += number.textContent;
+    valueArr.push(+number.textContent);
     numberDisplay.textContent = tempDisplayValue;
   });
 });
 
+const calculate = () => {
+  let result = operate(chosenOperation, +firstValue, +tempDisplayValue);
+  firstValue = "";
+  numberDisplay.textContent = result;
+  tempDisplayValue = result;
+};
+
 // Event listeners for operation buttons
 addBtn.addEventListener("click", () => {
+  if (!firstValue == "" && !tempDisplayValue == "") {
+    calculate();
+  }
   firstValue = tempDisplayValue;
   tempDisplayValue = "";
   chosenOperation = add;
 });
 
 subtractBtn.addEventListener("click", () => {
+  if (!firstValue == "" && !tempDisplayValue == "") {
+    calculate();
+  }
   firstValue = tempDisplayValue;
   tempDisplayValue = "";
   chosenOperation = subtract;
 });
 
 multiplyBtn.addEventListener("click", () => {
+  if (!firstValue == "" && !tempDisplayValue == "") {
+    calculate();
+  }
   firstValue = tempDisplayValue;
   tempDisplayValue = "";
   chosenOperation = multiply;
 });
 
 divideBtn.addEventListener("click", () => {
+  if (!firstValue == "" && !tempDisplayValue == "") {
+    calculate();
+  }
   firstValue = tempDisplayValue;
   tempDisplayValue = "";
   chosenOperation = divide;
 });
 
 equalsBtn.addEventListener("click", () => {
-  //console.log(chosenOperation, firstValue, tempDisplayValue);
-  let result = operate(chosenOperation, +firstValue, +tempDisplayValue);
-  firstValue = "";
-  numberDisplay.textContent = result;
-  tempDisplayValue = result;
+  calculate();
 });
