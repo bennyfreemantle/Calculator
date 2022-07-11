@@ -1,0 +1,110 @@
+:root {
+  --main-bg-colour: #264653;
+  --calc-bg-colour: #f4a261;
+  --main-accent-colour: #e9c46a;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* box sizing reset */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  background-color: var(--main-bg-colour);
+  font-family: "Roboto", sans-serif;
+}
+
+.calc-container {
+  min-width: 300px;
+  max-width: 450px;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--calc-bg-colour);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.calc-display {
+  display: flex;
+  padding: 1em;
+  margin-bottom: 1em;
+  width: 100%;
+  align-self: center;
+  background-color: var(--main-accent-colour);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.calc-display > p {
+  text-align: right;
+  width: 100%;
+}
+
+.number-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5em;
+}
+
+.equals-button {
+  height: 100%;
+  grid-row: 4 / 6;
+  grid-column: 4 / 5;
+}
+
+.expand-right {
+  grid-column: 1 / 3;
+}
+
+.number-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e76f51;
+  width: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.number-button:hover {
+  background-color: hsla(12, 76%, 61%, 0.5);
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  width: 100%;
+  height: 50px;
+}
