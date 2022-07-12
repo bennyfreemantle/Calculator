@@ -1,3 +1,3 @@
 # Calculator - The Odin Project
 
-:sparkles: [live preview](https://www.google.co.uk)
+:sparkles: [live preview](https://bennyfreemantle.github.io/Calculator/)
