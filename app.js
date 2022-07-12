@@ -71,30 +71,6 @@ operateBtns.forEach((operator) => {
   operator.addEventListener("click", () => setOperation(operator.textContent));
 });
 
-// // append the new number to the previous
-// function appendNumber(num) {
-//   if (currentOperationScreen.textContent === "0" || resetScreen) {
-//     resettingScreen();
-//   }
-
-//   if (finalValue) {
-//     finalValue = false;
-//     resettingScreen();
-//   }
-
-//   if (
-//     currentOperationScreen.textContent.charAt(
-//       currentOperationScreen.textContent.length - 1
-//     ) === "."
-//   ) {
-//     if (num.textContent === ".") {
-//       console.log("booya");
-//     }
-//   }
-
-//   currentOperationScreen.textContent += num;
-// }
-
 // clears the current operation screen
 function resettingScreen() {
   currentOperationScreen.textContent = "";
