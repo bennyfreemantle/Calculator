@@ -10,33 +10,37 @@
     <title>Calculator</title>
   </head>
   <body>
+    <header>
+      <h1>Calculator</h1>
+    </header>
     <div class="calc-container">
       <div class="calc-display">
-        <p></p>
+        <div id="lastOperationScreen">history</div>
+        <div id="currentOperationScreen">20</div>
       </div>
 
       <div class="number-container">
-        <button class="number-button expand-right delete-button">AC</button>
-        <button class="number-button divide-button">&#247;</button>
-        <button class="number-button multiply-button">&#215;</button>
+        <button class="number-button expand-right clear-button">AC</button>
+        <button class="number-button operate-button">÷</button>
+        <button class="number-button operate-button">x</button>
 
         <button class="number-button didgit-button">7</button>
         <button class="number-button didgit-button">8</button>
         <button class="number-button didgit-button">9</button>
-        <button class="number-button subtract-button">&#8722;</button>
+        <button class="number-button operate-button">-</button>
 
         <button class="number-button didgit-button">4</button>
         <button class="number-button didgit-button">5</button>
         <button class="number-button didgit-button">6</button>
-        <button class="number-button add-button">&#43;</button>
+        <button class="number-button operate-button">+</button>
 
         <button class="number-button didgit-button">1</button>
         <button class="number-button didgit-button">2</button>
         <button class="number-button didgit-button">3</button>
-        <button class="number-button equals-button">&#61;</button>
+        <button class="number-button equals-button">=</button>
 
         <button class="number-button didgit-button expand-right">0</button>
-        <button class="number-button">.</button>
+        <button class="number-button didgit-button">.</button>
       </div>
     </div>
   </body>
